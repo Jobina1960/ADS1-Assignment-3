@@ -4,6 +4,7 @@ import numpy as np
 import scipy.optimize as opt
 from sklearn import cluster 
 import err_ranges as err
+
 #defining file read function
 def readfile(file_name):
     """
@@ -99,11 +100,9 @@ plt.plot(pred,pred_,label="pred")
 plt.legend()
 plt.show()
 
-
 Brazil = pd.DataFrame()
 Brazil["methane"] = methane_trans["Brazil"]
 Brazil["agri_land"] = agri_land_trans["Brazil"]
-
  
 km = cluster.KMeans(n_clusters=2).fit(Brazil)
 label = km.labels_
@@ -116,7 +115,6 @@ c = km.cluster_centers_
 for s in range(2):
     xc,yc = c[s,:]
     plt.plot(xc,yc,"dk",markersize=15)
-
 
 Italy = pd.DataFrame()
 Italy["methane"] = methane_trans["Italy"]
