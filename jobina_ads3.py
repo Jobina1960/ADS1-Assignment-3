@@ -122,7 +122,7 @@ Italy = pd.DataFrame()
 Italy["methane"] = methane_trans["Italy"]
 Italy["agri_land"] = agri_land_trans["Italy"]
 
-
+#Clustering
 km = cluster.KMeans(n_clusters=2).fit(Italy)
 label = km.labels_
 plt.figure()
